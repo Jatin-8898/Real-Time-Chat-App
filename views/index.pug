@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Real Time Chat App
+    link(rel="stylesheet", href="/components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/style.css")
+
+
+    script(src="/components/jquery/dist/jquery.min.js")
+    script(src="/components/bootstrap/dist/js/bootstrap.min.js")
+    script(src="/js/main.js")
+    script(src="/socket.io/socket.io.js")
+
+body
+    nav.navbar.bg-dark.navbar-default
+        .container  
+            .navbar-header
+                a.navbar-brand(href='/') Real Time Chat App
+
+    .container
+        .row
+            .col-md-8
+                #error
+                #userFormWrap.mt-3.mb-5
+                    h2 Create Username
+                    form#userForm
+                        input#username.form-control(type="text", placeholder="Enter username")
+                        br
+                        button.btn.btn-default(type="submit") Submit
+                        
+
+                #mainWrap.mt-3
+                    h2 Speak Your Mind
+                    form#chatForm
+                        .form-group
+                            textarea#chatInput.form-control(name="body",placeholder="Say something")
+                            br
+                            button.btn.btn-default(type="submit") Submit
+                            br
+                            br
+                        #chatWindow.border.rounded.bg-light
+            .col-md-4.mt-3   
+                h3 Chat Users
+                ul.list-group
+                    #users                   
